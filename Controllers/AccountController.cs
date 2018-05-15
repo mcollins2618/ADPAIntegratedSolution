@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApp_OpenIDConnect_DotNet.Controllers
+namespace ADAPIntegratedSolution.Controllers
 {
     [Route("[controller]/[action]")]
     public class AccountController : Controller

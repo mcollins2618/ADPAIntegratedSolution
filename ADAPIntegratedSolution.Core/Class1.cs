@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ADPAIntegratedSolution.Core
+namespace ADAPIntegratedSolution.Core
 {
     public class Class1
     {

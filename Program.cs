@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace WebApp_OpenIDConnect_DotNet
+namespace ADAPIntegratedSolution
 {
     public class Program
     {

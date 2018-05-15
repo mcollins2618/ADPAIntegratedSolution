@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace WebApp_OpenIDConnect_DotNet
+namespace ADAPIntegratedSolution
 {
     public class Startup
     {

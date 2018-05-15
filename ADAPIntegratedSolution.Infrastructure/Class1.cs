@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ADPAIntegratedSolution.Infrastructure
+namespace ADAPIntegratedSolution.Infrastructure
 {
     public class Class1
     {

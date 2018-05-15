@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebApp_OpenIDConnect_DotNet.Models;
+using ADAPIntegratedSolution.Models;
 
-namespace WebApp_OpenIDConnect_DotNet.Controllers
+namespace ADAPIntegratedSolution.Controllers
 {
     [Authorize]
     public class HomeController : Controller

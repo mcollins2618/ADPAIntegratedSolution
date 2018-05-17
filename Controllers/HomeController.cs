@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ADAPIntegratedSolution.Models;
+using System.Security.Claims;
 
 namespace ADAPIntegratedSolution.Controllers
 {
@@ -41,6 +42,13 @@ namespace ADAPIntegratedSolution.Controllers
         public IActionResult OutOfOffice()
         {
             ViewData["Message"] = "Your Out of Office page.";
+
+            return View();
+        }
+
+        public IActionResult LogicApp()
+        {
+            ViewData["Message"] = "Your Logic App page.";
 
             return View();
         }

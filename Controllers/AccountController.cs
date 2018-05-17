@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace ADAPIntegratedSolution.Controllers
         public IActionResult SignIn()
         {
             var redirectUrl = Url.Action(nameof(HomeController.Index), "Home");
+
             return Challenge(
                 new AuthenticationProperties { RedirectUri = redirectUrl },
                 OpenIdConnectDefaults.AuthenticationScheme);

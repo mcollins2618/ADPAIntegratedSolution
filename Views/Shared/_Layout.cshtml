@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ADAPIntegratedSolution</title>
-
+    <link rel="shortcut icon" href="~/favicon.png" type="image/x-icon" />
+    <title>@ViewData["Title"] - FieldConnect 2.0</title>
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -31,11 +31,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="MeetingCapture">Meeting Capture</a></li>
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="MeetingCapture">Meeting Capture</a></li>*@
                     <li><a asp-area="" asp-controller="Home" asp-action="Newsfeed">Newsfeed</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="BookRoom">Book a Room</a></li>
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="BookRoom">Book a Room</a></li>*@
                     <li><a asp-area="" asp-controller="Home" asp-action="OutOfOffice">Out of Office</a></li>
                     <li><a asp-area="" asp-controller="Employee" asp-action="Index">Employee</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="LogicApp">Logic App</a></li>
 
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
@@ -46,7 +47,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2017 - ADAPIntegratedSolution</p>
+            <p>&copy; @DateTime.Today.Year - FieldConnect 2.0</p>
         </footer>
     </div>
 

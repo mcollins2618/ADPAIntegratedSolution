@@ -1,6 +1,10 @@
-﻿using StudentApplication.Code;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using ADPAIntegratedSolution.Code;
 
-namespace StudentApplication.Models
+namespace ADPAIntegratedSolution.Web.Models
 {
     public class BootstrapModel
     {
@@ -23,6 +27,6 @@ namespace StudentApplication.Models
                         return "";
                 }
             }
-        }        
+        }
     }
 }

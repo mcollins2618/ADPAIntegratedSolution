@@ -26,6 +26,7 @@ namespace ADPAIntegratedSolution.Web.Controllers
                 Id = e.Id,
                 Name = $"{e.FirstName} {e.LastName}",
                 Salary = e.Salary,
+                Phone = e.Phone,
                 City = e.City
             });
             return View("Index", model);
@@ -44,6 +45,7 @@ namespace ADPAIntegratedSolution.Web.Controllers
                     model.FirstName = employee.FirstName;
                     model.LastName = employee.LastName;
                     model.Salary = employee.Salary;
+                    model.Phone = employee.Phone;
                     model.City = employee.City;
                 }
             }
@@ -65,6 +67,7 @@ namespace ADPAIntegratedSolution.Web.Controllers
                     employee.LastName = model.LastName;
                     employee.Salary = model.Salary;
                     employee.City = model.City;
+                    employee.Phone = model.Phone;
                     employee.IPAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
                     employee.ModifiedDate = DateTime.UtcNow;
                     if (isNew)

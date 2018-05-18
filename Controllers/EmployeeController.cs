@@ -33,7 +33,7 @@ namespace ADPAIntegratedSolution.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddEditEmployee(long? id)
+        public IActionResult AddEditEmployee(Guid? id)
         {
             EmployeeViewModel model = new EmployeeViewModel();
             if (id.HasValue)
@@ -52,7 +52,7 @@ namespace ADPAIntegratedSolution.Web.Controllers
             return PartialView("~/Views/Employee/_AddEditEmployee.cshtml", model);
         }
         [HttpPost]
-        public ActionResult AddEditEmployee(long? id, EmployeeViewModel model)
+        public ActionResult AddEditEmployee(Guid? id, EmployeeViewModel model)
         {
             try
             {
@@ -63,6 +63,7 @@ namespace ADPAIntegratedSolution.Web.Controllers
                     {
                         AddedDate = DateTime.UtcNow
                     } : employeeRepository.GetEmployee(id.Value);
+                    employee.Id = Guid.NewGuid();
                     employee.FirstName = model.FirstName;
                     employee.LastName = model.LastName;
                     employee.Salary = model.Salary;
@@ -88,7 +89,7 @@ namespace ADPAIntegratedSolution.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult DeleteEmployee(long id)
+        public IActionResult DeleteEmployee(Guid id)
         {
             Employee employee = employeeRepository.GetEmployee(id);
             EmployeeViewModel model = new EmployeeViewModel
@@ -98,7 +99,7 @@ namespace ADPAIntegratedSolution.Web.Controllers
             return PartialView("~/Views/Employee/_DeleteEmployee.cshtml", model);
         }
         [HttpPost]
-        public IActionResult DeleteEmployee(long id, IFormCollection form)
+        public IActionResult DeleteEmployee(Guid id, IFormCollection form)
         {
             employeeRepository.DeleteEmployee(id);
             return RedirectToAction("Index");

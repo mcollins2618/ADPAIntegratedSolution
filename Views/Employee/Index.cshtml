@@ -22,26 +22,28 @@
                     <th>Name</th>
                     <th>Salary</th>
                     <th>City</th>
-                    <th>Action</th>
+                    <th>Phone</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Salary)</td>
-                        <td>@Html.DisplayFor(modelItem => item.City)</td>
-                        <td>
-                            <a id="editEmployeeModal" data-toggle="modal" asp-action="AddEditEmployee" asp-route-id="@item.Id" data-target="#modal-action-employee"
-                               class="btn btn-info">
-                                <i class="glyphicon glyphicon-pencil"></i>  Edit
-                            </a>
-                            <a id="deleteEmployeeModal" data-toggle="modal" asp-action="DeleteEmployee" asp-route-id="@item.Id" data-target="#modal-action-employee" class="btn btn-danger">
-                                <i class="glyphicon glyphicon-trash"></i>  Delete
-                            </a>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Salary)</td>
+                    <td>@Html.DisplayFor(modelItem => item.City)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+
+                    <td>
+                        <a id="editEmployeeModal" data-toggle="modal" asp-action="AddEditEmployee" asp-route-id="@item.Id" data-target="#modal-action-employee"
+                           class="btn btn-info">
+                            <i class="glyphicon glyphicon-pencil"></i>  Edit
+                        </a>
+                        <a id="deleteEmployeeModal" data-toggle="modal" asp-action="DeleteEmployee" asp-route-id="@item.Id" data-target="#modal-action-employee" class="btn btn-danger">
+                            <i class="glyphicon glyphicon-trash"></i>  Delete
+                        </a>
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>

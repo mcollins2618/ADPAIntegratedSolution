@@ -8,7 +8,7 @@ namespace ADPAIntegratedSolution.Web.Models
 {
     public class EmployeeViewModel
     {
-        public long Id { get; set; }
+        public Guid Id { get; set; }
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
         [Display(Name = "Last Name")]

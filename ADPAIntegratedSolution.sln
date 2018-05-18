@@ -5,7 +5,12 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADPAIntegratedSolution.Web", "ADPAIntegratedSolution.Web.csproj", "{8DCFEEC2-0A85-4C7E-B96A-21C9184470B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADAPIntegratedSolution.Data", "..\ADAPIntegratedSolution.Data\ADAPIntegratedSolution.Data.csproj", "{4AA7F941-DE71-4B63-B80A-73B482959915}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADAPIntegratedSolution.Data", "..\ADAPIntegratedSolution.Data\ADAPIntegratedSolution.Data.csproj", "{4AA7F941-DE71-4B63-B80A-73B482959915}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADPAIntegratedSolution.API", "..\ADPAIntegratedSolution.API\ADPAIntegratedSolution.API.csproj", "{6432BB5D-5CDE-41DC-9444-B1CC5056433A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4AA7F941-DE71-4B63-B80A-73B482959915} = {4AA7F941-DE71-4B63-B80A-73B482959915}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,10 @@ Global
 		{4AA7F941-DE71-4B63-B80A-73B482959915}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AA7F941-DE71-4B63-B80A-73B482959915}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AA7F941-DE71-4B63-B80A-73B482959915}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6432BB5D-5CDE-41DC-9444-B1CC5056433A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6432BB5D-5CDE-41DC-9444-B1CC5056433A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6432BB5D-5CDE-41DC-9444-B1CC5056433A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6432BB5D-5CDE-41DC-9444-B1CC5056433A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ADAPIntegratedSolution.Data;
 using ADPAIntegratedSolution.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,6 +20,7 @@ namespace ADPAIntegratedSolution.Web.Controllers
         }
 
         [HttpGet]
+        [Authorize(Policy = "Technician")]
         public IActionResult Index()
         {
             IEnumerable<EmployeeViewModel> model = employeeRepository.GetAllEmployees().Select(e => new EmployeeViewModel
@@ -27,7 +29,7 @@ namespace ADPAIntegratedSolution.Web.Controllers
                 Name = $"{e.FirstName} {e.LastName}",
                 Salary = e.Salary,
                 Phone = e.Phone,
-                City = e.City
+                City = e.City,
             });
             return View("Index", model);
         }
@@ -61,9 +63,9 @@ namespace ADPAIntegratedSolution.Web.Controllers
                     bool isNew = !id.HasValue;
                     Employee employee = isNew ? new Employee
                     {
+                        Id = Guid.NewGuid(),
                         AddedDate = DateTime.UtcNow
                     } : employeeRepository.GetEmployee(id.Value);
-                    employee.Id = Guid.NewGuid();
                     employee.FirstName = model.FirstName;
                     employee.LastName = model.LastName;
                     employee.Salary = model.Salary;

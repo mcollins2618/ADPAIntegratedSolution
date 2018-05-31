@@ -15,7 +15,7 @@ namespace ADPAIntegratedSolution.Web.Models
         public string LastName { get; set; }
         public string Name { get; set; }
         public string City { get; set; }
-        public decimal Phone { get; set; }
-        public decimal Salary { get; set; }
+        public string Phone { get; set; }
+        public string Salary { get; set; }
     }
 }

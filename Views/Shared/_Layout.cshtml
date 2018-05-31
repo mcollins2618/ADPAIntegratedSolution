@@ -31,12 +31,9 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    @*<li><a asp-area="" asp-controller="Home" asp-action="MeetingCapture">Meeting Capture</a></li>*@
-                    <li><a asp-area="" asp-controller="Home" asp-action="Newsfeed">Newsfeed</a></li>
-                    @*<li><a asp-area="" asp-controller="Home" asp-action="BookRoom">Book a Room</a></li>*@
-                    <li><a asp-area="" asp-controller="Home" asp-action="OutOfOffice">Out of Office</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Attachments">Attachments</a></li>
                     <li><a asp-area="" asp-controller="Employee" asp-action="Index">Employee</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="LogicApp">Logic App</a></li>
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="LogicApp">Logic App</a></li>*@
 
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")

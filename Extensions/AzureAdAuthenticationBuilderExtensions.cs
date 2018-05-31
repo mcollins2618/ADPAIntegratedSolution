@@ -30,11 +30,25 @@ namespace Microsoft.AspNetCore.Authentication
 
             public void Configure(string name, OpenIdConnectOptions options)
             {
+                //enable the access token request
+                options.ResponseType = "token id_token";
+
+                //the target resource URI (access token for) == Audience Uri (aud) in the JWT
+                //note: by default the template wants this field equal to the target application Application ID (== AppId)
+                //the target application will check this field in order to understand if the token is meant for itself
+                //this check can be modified in order to use more meaningful string editing ConfigureAzureOptions in the target app (Api)
+                options.Resource = _azureOptions.TargetApiAppId;
+
+                //save tokens in the request context
+                options.SaveTokens = true;
+
+
                 options.ClientId = _azureOptions.ClientId;
                 options.Authority = $"{_azureOptions.Instance}{_azureOptions.TenantId}";
                 options.UseTokenLifetime = true;
                 options.CallbackPath = _azureOptions.CallbackPath;
                 options.RequireHttpsMetadata = false;
+
             }
 
             public void Configure(OpenIdConnectOptions options)
